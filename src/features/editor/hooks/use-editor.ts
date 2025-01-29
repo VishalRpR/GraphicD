@@ -37,8 +37,7 @@ export const useEditor = () => {
       initialCanvas.setWidth(initialContainer.offsetWidth);
 
       initialCanvas.setHeight(initialContainer.offsetHeight);
-      console.log("Container offsetHeight:", initialContainer.offsetHeight);
-
+      
       initialCanvas.add(initialWorkspace),
         initialCanvas.centerObject(initialWorkspace);
       initialCanvas.clipPath = initialWorkspace;
