@@ -18,7 +18,7 @@ export const SidebarItem = ({
 }: SidebarItemProps) => {
   return (
     <Button
-    variant="ghost"
+      variant="ghost"
       onClick={onClick}
       className={cn(
         "w-full h-full aspect-video p-3 py-4 flex flex-col rounded-none",

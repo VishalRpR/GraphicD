@@ -4,9 +4,10 @@ import { SidebarItem } from "@/features/editor/components/sidebar-item";
 import {
   ImageIcon,
   LayoutTemplate,
-  Settings,
-  Shapes,
-  Sparkle,
+  SettingsIcon,
+  ShapesIcon,
+  SparkleIcon,
+  TextIcon,
 } from "lucide-react";
 import { ActiveTool } from "@/features/editor/types";
 
@@ -18,7 +19,7 @@ interface SidebarProps {
 export const Sidebar = ({ activeTool, onChangeActiveTool }: SidebarProps) => {
   return (
     <aside
-      className="flex bg-white flex-col w-[100px] h-full border-r
+      className="bg-white flex flex-col w-[100px] h-full border-r
     overflow-y-auto "
     >
       <ul className="felx flex-col">
@@ -34,23 +35,30 @@ export const Sidebar = ({ activeTool, onChangeActiveTool }: SidebarProps) => {
           isActive={activeTool === "images"}
           onClick={() => onChangeActiveTool("images")}
         />
+
         <SidebarItem
-          icon={Shapes}
+          icon={TextIcon}
+          label="Text"
+          isActive={activeTool === "text"}
+          onClick={() => onChangeActiveTool("text")}
+        />
+        <SidebarItem
+          icon={ShapesIcon}
           label="Shapes"
-          isActive={false}
-          onClick={() => {}}
+          isActive={activeTool === "shapes"}
+          onClick={() => onChangeActiveTool("shapes")}
         />
         <SidebarItem
-          icon={Sparkle}
+          icon={SparkleIcon}
           label="AI"
-          isActive={false}
-          onClick={() => {}}
+          isActive={activeTool === "ai"}
+          onClick={() => onChangeActiveTool("ai")}
         />
         <SidebarItem
-          icon={Settings}
+          icon={SettingsIcon}
           label="Settings"
-          isActive={false}
-          onClick={() => {}}
+          isActive={activeTool === "settings"}
+          onClick={() => onChangeActiveTool("settings")}
         />
       </ul>
     </aside>
